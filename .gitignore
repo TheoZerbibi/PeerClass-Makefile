@@ -1,0 +1,11 @@
+# GLOBAL
+objs
+*.o
+*.d
+*.out
+*.swp
+*.a
+.vscode
+
+# PROJECT
+peerclass*
