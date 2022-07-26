@@ -6,7 +6,7 @@
 #    By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/19 12:13:48 by thzeribi          #+#    #+#              #
-#    Updated: 2022/07/26 06:27:30 by thzeribi         ###   ########.fr        #
+#    Updated: 2022/07/26 07:38:44 by thzeribi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,6 @@
 ifndef VERBOSE
 MAKEFLAGS += --no-print-directory --silent
 endif
-
-AUTHOR	= thzeribi
-DATE	= $(shell date +%F)
 
 NAME				=	peerclass1
 PROJECT_NAME		=	PeerClass

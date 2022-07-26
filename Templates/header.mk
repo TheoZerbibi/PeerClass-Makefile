@@ -6,13 +6,16 @@
 #    By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/26 01:52:22 by thzeribi          #+#    #+#              #
-#    Updated: 2022/07/26 06:31:22 by thzeribi         ###   ########.fr        #
+#    Updated: 2022/07/26 07:38:51 by thzeribi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 DEFAULT_SPACE = 63
 
 RULE = $(filter all re clean fclean doclean norm header test fsanitize,$(MAKECMDGOALS))
+
+AUTHOR	= thzeribi
+DATE	= $(shell date +%F)
 
 define print_header
 	printf "%b" "$(INFO_COLOR)";
