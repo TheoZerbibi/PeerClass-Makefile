@@ -1,3 +1,5 @@
 # PeerClass-Makefile
 
-Bon tuto sur les Makefile : https://noahloomans.com/tutorials/makefile/
+Ressources sur les Makefile :
+- https://noahloomans.com/tutorials/makefile/
+- https://github.com/amjadmajid/Makefile
