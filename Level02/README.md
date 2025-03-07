@@ -49,6 +49,7 @@ fclean:
 `make` est un standard pour simplifier et automatiser la gestion des compilations en développement logiciel.
 
 ### Ressources
-- [Implicit Variables](https://www.gnu.org/software/make/manual/make.html#Implicit-Variables)
-- [Phony Targets](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)
-- [Special Targets](https://www.gnu.org/software/make/manual/html_node/Special-Targets.html)
+- [Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html)
+- [Prerequisite Types](https://www.gnu.org/software/make/manual/html_node/Prerequisite-Types.html)
+- [Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Implicit-Rules.html)
+- [Automatic Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)
