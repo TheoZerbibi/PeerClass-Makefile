@@ -1,5 +1,5 @@
 # GLOBAL
-objs
+obj/
 *.o
 *.d
 *.out

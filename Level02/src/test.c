@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 22:41:31 by thzeribi          #+#    #+#             */
-/*   Updated: 2019/11/13 22:45:38 by thzeribi         ###   ########.fr       */
+/*   Created: 2022/07/26 02:24:19 by thzeribi          #+#    #+#             */
+/*   Updated: 2022/07/26 03:07:37 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "peerclass.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void
+	ft_putstr(char *str)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	(*str) ? write(1, *&str, 1), ft_putstr(++str) : 0;
 }

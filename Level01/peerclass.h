@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_trace.c                                   :+:      :+:    :+:   */
+/*   peerclass.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/29 16:29:09 by thzeribi          #+#    #+#             */
-/*   Updated: 2021/07/29 16:30:22 by thzeribi         ###   ########.fr       */
+/*   Created: 2022/07/26 01:58:06 by thzeribi          #+#    #+#             */
+/*   Updated: 2025/03/07 16:47:34 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PEERCLASS_H
+# define PEERCLASS_H
 
-void
-	ft_stack_trace(char *caller)
-{
-	void	*array[10];
-	size_t	size;
+# define STR "Hello Peerclass Level1 !\n"
 
-	printf("Stack Trace Start for %s\n", caller);
-	size = backtrace(array, 10);
-	backtrace_symbols_fd(array, size, 2);
-	printf("Stack Trace End\n");
-}
+# include <stdio.h>
+# include <unistd.h>
+
+void	ft_putstr(char *str);
+
+#endif

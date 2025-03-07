@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_contain.c                                       :+:      :+:    :+:   */
+/*   peerclass.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 18:19:42 by thzeribi          #+#    #+#             */
-/*   Updated: 2021/10/19 18:21:53 by thzeribi         ###   ########.fr       */
+/*   Created: 2022/07/26 01:58:06 by thzeribi          #+#    #+#             */
+/*   Updated: 2025/03/07 17:27:41 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PEERCLASS_H
+# define PEERCLASS_H
 
-int
-	ft_contain(char *src, char c)
-{
-	int	i;
+# define STR "Hello Peerclass Level2!\n"
 
-	i = -1;
-	while (src)
-	{
-		if (src[++i] == c)
-			return (TRUE);
-	}
-	return (FALSE);
-}
+# include <stdio.h>
+# include <unistd.h>
+
+void	ft_putstr(char *str);
+
+#endif
