@@ -1,5 +1,5 @@
 CC          := gcc
-CFLAGS      := -Wall -Wextra -Werror
+CFLAGS      := -Wall -Wextra -Werror -MMD -MP
 CPPFLAGS    := -I./include
 LDFLAGS     :=  
 LDLIBS      :=  
@@ -22,14 +22,11 @@ $(NAME): $(OBJECTS)
 	@echo "$@ has been created"
 
 -include $(DEPS)
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@echo "$^ | $< | $@"
-	$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@
+	mkdir -p $(dir $@)
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 	@echo "$@ has been compiled\n"
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-	@echo
 
 clean:
 	rm -f $(OBJECTS) $(DEPS)
