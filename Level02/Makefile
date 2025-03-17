@@ -18,15 +18,20 @@ DEPS        := $(OBJECTS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ $(LDLIBS)
+	@echo "\n\033[0;33m-----------------------------------"
+	@echo "$^ | $@"
+	@echo "-----------------------------------\033[0m"
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
 	@echo "$@ has been created"
 
 -include $(DEPS)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@echo "$^ | $< | $@"
+	@echo "\n\033[0;33m-------------------------------------------------------------------------"
+	@echo "$^ | $< | $@ | $* | $(@F)"
+	@echo "-------------------------------------------------------------------------\033[0m"
 	mkdir -p $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-	@echo "$@ has been compiled\n"
+	@echo "$(@F) has been compiled"
 
 clean:
 	rm -f $(OBJECTS) $(DEPS)
