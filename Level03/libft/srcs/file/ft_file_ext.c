@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*   ft_file_ext.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 18:48:20 by thzeribi          #+#    #+#             */
-/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
+/*   Created: 2021/04/13 17:51:35 by thzeribi          #+#    #+#             */
+/*   Updated: 2023/01/09 03:24:10 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-void
-	free_vector(t_vector *vector)
+const char	*ft_file_ext(const char *filename, const char ext)
 {
-	free(vector->bytes);
-	free(vector);
-}
+	const char	*dot;
 
-void
-	*vector_at(t_vector *vector, size_t index)
-{
-	return (vector->bytes + index * vector->elem_size);
-}
-
-void
-	*vector_end(t_vector *vector)
-{
-	return (vector->bytes + vector->len * vector->elem_size);
+	dot = ft_strrchr(filename, ext);
+	if (!dot || dot == filename)
+		return (NULL);
+	return (dot + 1);
 }

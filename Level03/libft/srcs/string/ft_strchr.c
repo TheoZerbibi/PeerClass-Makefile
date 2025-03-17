@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 18:48:20 by thzeribi          #+#    #+#             */
-/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
+/*   Created: 2019/11/06 20:17:44 by thzeribi          #+#    #+#             */
+/*   Updated: 2022/09/22 22:05:01 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-void
-	free_vector(t_vector *vector)
+char	*ft_strchr(const char *s, int c)
 {
-	free(vector->bytes);
-	free(vector);
-}
-
-void
-	*vector_at(t_vector *vector, size_t index)
-{
-	return (vector->bytes + index * vector->elem_size);
-}
-
-void
-	*vector_end(t_vector *vector)
-{
-	return (vector->bytes + vector->len * vector->elem_size);
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == '\0' && c == '\0')
+		return (NULL);
+	return (NULL);
 }

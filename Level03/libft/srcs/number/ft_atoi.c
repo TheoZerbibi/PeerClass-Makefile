@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 18:48:20 by thzeribi          #+#    #+#             */
-/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
+/*   Created: 2019/08/08 11:03:03 by thzeribi          #+#    #+#             */
+/*   Updated: 2023/02/28 20:36:54 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-void
-	free_vector(t_vector *vector)
+int	ft_atoi(const char *str)
 {
-	free(vector->bytes);
-	free(vector);
-}
+	int			i;
+	long long	result;
 
-void
-	*vector_at(t_vector *vector, size_t index)
-{
-	return (vector->bytes + index * vector->elem_size);
-}
-
-void
-	*vector_end(t_vector *vector)
-{
-	return (vector->bytes + vector->len * vector->elem_size);
+	i = 0;
+	result = 0;
+	while (ft_isspace(str[i]) == 1 && str[i] == '0')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			return (INT_MIN);
+		i++;
+	}
+	while (ft_isdigit(str[i]) == 1)
+	{
+		result = result * 10 + str[i] - '0';
+		if (result > INT_MAX)
+			return (INT_MIN);
+		i++;
+	}
+	return ((int)result);
 }

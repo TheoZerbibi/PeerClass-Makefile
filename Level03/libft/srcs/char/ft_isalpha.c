@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 18:48:20 by thzeribi          #+#    #+#             */
-/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
+/*   Created: 2019/08/02 11:45:56 by thzeribi          #+#    #+#             */
+/*   Updated: 2023/01/15 09:57:27 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-void
-	free_vector(t_vector *vector)
+int	ft_isalpha(int c)
 {
-	free(vector->bytes);
-	free(vector);
-}
-
-void
-	*vector_at(t_vector *vector, size_t index)
-{
-	return (vector->bytes + index * vector->elem_size);
-}
-
-void
-	*vector_end(t_vector *vector)
-{
-	return (vector->bytes + vector->len * vector->elem_size);
+	if ((c >= 32 || c <= 126) && (c >= 7 || c <= 13))
+		return (TRUE);
+	return (FALSE);
 }

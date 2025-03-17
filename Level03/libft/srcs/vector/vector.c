@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tzeribi <tzeribi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 17:47:26 by thzeribi          #+#    #+#             */
-/*   Updated: 2021/10/29 15:12:17 by tzeribi          ###   ########.fr       */
+/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_vector
 	vector->bytes = ft_calloc(count, size + 1);
 	if (!vector->bytes)
 	{
-		gc_free(vector->bytes);
+		free(vector->bytes);
 		return (NULL);
 	}
 	vector->len = 0;
@@ -57,7 +57,7 @@ t_vector
 		vector->size = new_size;
 	}
 	ft_memcpy(new, vector->bytes, cpy * vector->elem_size);
-	gc_free(vector->bytes);
+	free(vector->bytes);
 	vector->bytes = new;
 	return (vector);
 }

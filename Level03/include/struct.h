@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thzeribi <thzeribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 18:48:20 by thzeribi          #+#    #+#             */
-/*   Updated: 2022/09/22 16:42:54 by thzeribi         ###   ########.fr       */
+/*   Created: 2022/07/26 05:56:37 by thzeribi          #+#    #+#             */
+/*   Updated: 2022/07/26 05:56:48 by thzeribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-void
-	free_vector(t_vector *vector)
-{
-	free(vector->bytes);
-	free(vector);
-}
+typedef struct s_mlx	t_mlx;
+typedef struct s_data	t_data;
+typedef struct s_img    t_img;
 
-void
-	*vector_at(t_vector *vector, size_t index)
+typedef struct s_img
 {
-	return (vector->bytes + index * vector->elem_size);
-}
+	void    *image;
+	char    *addr;
+	int     size_line;
+	int     bpp;
+	int     endian;
+	int     width;
+	int     height;
+	unsigned int    *buffer;
+}   t_img;
 
-void
-	*vector_end(t_vector *vector)
+struct s_mlx
 {
-	return (vector->bytes + vector->len * vector->elem_size);
-}
+	void	*mlx;
+	void	*win;
+};
+
+struct s_data
+{
+	t_mlx		mlx;
+	t_img		image;
+};
+
+
+#endif
