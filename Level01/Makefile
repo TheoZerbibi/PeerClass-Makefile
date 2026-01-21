@@ -21,4 +21,4 @@ test.o: test.c
 fclean:
 	rm -f *.o peerclass1
 
-# .PHONY: fclean all
+.PHONY: fclean all
