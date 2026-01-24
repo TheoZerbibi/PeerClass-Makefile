@@ -56,7 +56,7 @@ BASE = Bonjour
 # echo $(SIMPLE)  # Affiche toujours "Hello World!"
 # echo $(LAZY)    # Affiche "Bonjour World!"
 SIMPLE += "!!!"
-# echo $(SIMPLE)  # Affiche "Hello World!!!"
+# echo $(SIMPLE)  # Affiche "Hello World!!!!"
 CONDI ?= Hola
 # echo $(CONDI)   # Affiche "Hola"
 CONDI ?= Salut
