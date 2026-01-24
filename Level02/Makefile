@@ -1,8 +1,8 @@
 CC          := gcc
 CFLAGS      := -Wall -Wextra -Werror -MMD -MP
 CPPFLAGS    := -I./include
-LDFLAGS     :=  
-LDLIBS      :=  
+LDFLAGS     :=
+LDLIBS      :=
 
 NAME        := peerclass2
 

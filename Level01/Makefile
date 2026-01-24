@@ -1,6 +1,6 @@
-CC			:= gcc
+CC				:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
-CPPFLAGS 	:= -I./
+CPPFLAGS	:= -I./
 
 all: peerclass1
 
@@ -22,3 +22,4 @@ fclean:
 	rm -f *.o peerclass1
 
 .PHONY: fclean all
+# = := ?= +=
