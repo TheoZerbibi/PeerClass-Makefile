@@ -10,12 +10,12 @@ peerclass1: main.o test.o
 	@echo "$@ has been created"
 
 main.o: main.c
-	$(CC) $(CPPFLAGS) -c main.c $(CFLAGS)
+	$(CC) $(CPPFLAGS) -c main.c -o main.o $(CFLAGS)
 	@echo "$@ has been compiled" 
 
 test.o: test.c
 	@echo
-	$(CC) $(CPPFLAGS) -c test.c $(CFLAGS)
+	$(CC) $(CPPFLAGS) -c test.c -o test.o $(CFLAGS)
 	@echo "$@ has been compiled\n"
 
 fclean:
